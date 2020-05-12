@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">Mr Finch"'"s Antique BookStore</string>
+
+    <!-- Misc Buttons -->
+    <string name="button_log_out">Log Out</string>
+
+    <!-- Login Screen -->
+    <string name="user_name">Username</string>
+    <string name="password">Password</string>
+    <string name="button_login">Login</string>
+
+    <!-- Main Menu -->
+    <string name="button_book_search">Book Search</string>
+    <string name="button_orders">Orders</string>
+    <string name="button_customers">Customers</string>
+    <string name="button_employees">Employees</string>
+    <string name="button_add_books">Add Books</string>
+
+    <!-- Orders Screen-->
+    <string name="button_place_order">Place Order</string>
+    <string name="button_search_order">Search Order</string>
+
+    <!-- Employees Screen-->
+    <string name="button_modify_employee">Modify Employee</string>
+    <string name="button_add_employee">Add Employee</string>
+
+    <!-- Customers Screen-->
+    <string name="button_modify_customer">Modify Customer</string>
+    <string name="button_add_customer">Add Customer</string>
+
+    <!-- Book Search Screen-->
+    <string name="search_window_hint">Search Window</string>
+    <string name="button_cart">Cart</string>
+    <string name="button_add_to_cart">Add to Cart</string>
+    <string name="button_checkout">Checkout</string>
+
+    <!-- Add Book Screen -->
+    <string name="author">Author</string>
+    <string name="title">Title</string>
+    <string name="publisher">Publisher</string>
+    <string name="publish_date">Publish Date</string>
+    <string name="edition">Edition</string>
+    <string name="cost">Cost</string>
+    <string name="retail_price">Retail Price</string>
+    <string name="rating">Rating</string>
+    <string name="cover_type">Cover Type</string>
+    <string name="genre">Genre</string>
+    <string-array name="genre">
+        <item>Fiction</item>
+        <item>Non-fiction</item>
+    </string-array>
+    <string name="add_book">Add Book</string>
+
+    <!-- Book List View-->
+    <string name="button_back">Back</string>
+
+</resources>

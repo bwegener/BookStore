@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/employeesButton"
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="150dp"
+            android:onClick="handleButtons"
+            android:visibility="invisible"
+            android:textSize="50sp"
+            android:text="@string/button_employees"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+2
+        <Button
+            android:id="@+id/bookSearchButton"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:textSize="50sp"
+            android:onClick="handleButtons"
+            android:text="@string/button_book_search"/>
+
+        <Button
+            android:id="@+id/ordersButton"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:textSize="50sp"
+            android:onClick="handleButtons"
+            android:text="@string/button_orders"/>
+
+        <Button
+            android:id="@+id/customersButton"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            android:layout_marginTop="50dp"
+            android:textSize="50sp"
+            android:onClick="handleButtons"
+            android:text="@string/button_customers"/>
+
+        <Button
+            android:id="@+id/logoutButton"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:layout_gravity="center"
+            android:onClick="handleButtons"
+            android:text="@string/button_log_out"
+            android:textSize="50sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/addBooksButton"
+            android:layout_width="300dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="150dp"
+            android:visibility="invisible"
+            android:textSize="50sp"
+            android:onClick="handleButtons"
+            android:text="@string/button_add_books"/>
+
+    </LinearLayout>
+
+</LinearLayout>

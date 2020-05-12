@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageButton
+        android:id="@+id/backArrowImage"
+        android:layout_width="141dp"
+        android:layout_height="115dp"
+        android:src="@drawable/back_arrow"
+        android:onClick="goBack"
+        />
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_marginLeft="50dp"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title"
+            android:textSize="@dimen/add_book_text"
+            />
+
+        <EditText
+            android:id="@+id/titleEditText"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/add_book_text"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/authorTextView"
+            android:layout_marginLeft="50dp"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/author"
+            android:textSize="@dimen/add_book_text"
+            />
+
+        <EditText
+            android:id="@+id/authorEditText"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/add_book_text"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/publisherTextView"
+            android:layout_marginLeft="50dp"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/publisher"
+            android:textSize="@dimen/add_book_text"
+            />
+
+        <EditText
+            android:id="@+id/publisherEditText"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/add_book_text"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/publishDateTextView"
+            android:layout_marginLeft="50dp"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/publish_date"
+            android:textSize="@dimen/add_book_text"
+            />
+
+        <EditText
+            android:id="@+id/publishDateEditText"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/add_book_text"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/editionTextView"
+            android:layout_marginLeft="50dp"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/edition"
+            android:textSize="@dimen/add_book_text"
+            />
+
+        <EditText
+            android:id="@+id/editionEditText"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/add_book_text"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/costTextView"
+            android:layout_marginLeft="50dp"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cost"
+            android:textSize="@dimen/add_book_text"
+            />
+
+        <EditText
+            android:id="@+id/costEditText"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/add_book_text"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/ratingTextView"
+            android:layout_marginLeft="50dp"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rating"
+            android:textSize="@dimen/add_book_text"
+            />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:numStars="5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/add_book_text"
+            ></RatingBar>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/coverTypeTextView"
+            android:layout_marginLeft="50dp"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cover_type"
+            android:textSize="@dimen/add_book_text"
+            />
+
+        <EditText
+            android:id="@+id/coverTypeEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:textSize="@dimen/add_book_text"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/genreTextView"
+            android:layout_marginLeft="50dp"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/genre"
+            android:textSize="@dimen/add_book_text"
+            />
+
+        <Spinner
+            android:id="@+id/genreSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:textSize="@dimen/add_book_text"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/addBookButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:onClick="addBook"
+        android:text="@string/add_book"
+        />
+
+
+</LinearLayout>

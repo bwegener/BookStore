@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LoginActivity">
+
+    <TextView
+        android:id="@+id/antiqueBookstore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBlue"
+        android:padding="25dp"
+        android:text="@string/app_name"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        />
+
+    <EditText
+        android:id="@+id/userNameLogInET"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="@dimen/margins_login_screen"
+        android:layout_marginRight="@dimen/margins_login_screen"
+        android:paddingTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:hint="@string/user_name"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/colorFuschia"
+        android:textSize="@dimen/edit_text_size"
+        />
+
+    <EditText
+        android:id="@+id/passwordLogInET"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="@dimen/margins_login_screen"
+        android:layout_marginRight="@dimen/margins_login_screen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:hint="@string/password"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/colorFuschia"
+        android:textSize="@dimen/edit_text_size"
+        />
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="75dp"
+        android:layout_marginRight="75dp"
+        android:paddingTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/edit_text_size"
+        android:text="@string/button_login"
+        android:onClick="Login"
+        />
+
+</LinearLayout>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    >
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ListView
+
+            android:layout_width="400dp"
+            android:layout_height="400dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="50dp"
+            android:background="@color/colorBlue"
+            >
+
+        </ListView>
+
+        <EditText
+            android:id="@+id/searchWindow"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:ems="10"
+            android:textAlignment="center"
+            android:inputType="textPersonName"
+            android:text="@string/search_window_hint"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center_horizontal"
+            android:textSize="30sp"
+            android:text="@string/button_cart"/>
+
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="250dp">
+
+        </ListView>
+
+        <Button
+            android:id="@+id/checkoutButton"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="100dp"
+            android:text="@string/button_checkout"/>
+
+
+        <Button
+            android:id="@+id/logoutButton"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/button_log_out"
+            android:textSize="15sp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

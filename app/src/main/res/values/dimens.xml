@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="edit_text_size">25sp</dimen>
+    <dimen name="margins_login_screen">50sp</dimen>
+    <dimen name="add_book_text">15sp</dimen>
+
+</resources>
