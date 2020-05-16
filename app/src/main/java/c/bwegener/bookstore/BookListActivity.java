@@ -5,47 +5,43 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
-import java.io.IOException;
 import java.util.List;
 
 public class BookListActivity extends ListActivity {
 
-    private List<Book> mAllBooksList;
+    private DBHelper db;
+    private List<Book> booksList;
+    private BookListAdapter booksListAdapter;
+    private ListView booksListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_book_list);
 
-        try {
-            mAllBooksList = JSONLoader.loadJSONFromAsset(this);
-        }
-        catch (IOException e)
+        db = new DBHelper(this);
+
+        booksList = db.getAllBooks();
+        booksListAdapter = new BookListAdapter(this, R.layout.book_list_item, booksList);
+        booksListView = findViewById(R.id.booksListView);
+        booksListView.setAdapter(booksListAdapter);
+    }
+
+    public void viewBookDeatails(View v)
+    {
+        if(v instanceof LinearLayout)
         {
-            Log.e("Bookstore", "Error loading from JSON", e);
+            LinearLayout selectedLayout = (LinearLayout) v;
+            Book selectedBook = (Book) selectedLayout.getTag();
+            Log.i("Antique Bookstore", selectedBook.toString());
+            Intent bookDetailsIntent = new Intent(this, BookDetailsActivity.class);
+
+            bookDetailsIntent.putExtra("SelectedBook", selectedBook);
+            startActivity(bookDetailsIntent);
         }
-
-        setListAdapter(new BookListAdapter(this, R.layout.book_list_item, mAllBooksList));
     }
 
-    @Override
-    protected void onListItemClick(ListView l, View v, int position, long id) {
-
-        Intent detailsIntent = new Intent(this, BookDetailsActivity.class);
-        Book selectedBook = mAllBooksList.get(position);
-
-        detailsIntent.putExtra("Title", selectedBook.getTitle());
-        detailsIntent.putExtra("Author", selectedBook.getAuthor());
-        detailsIntent.putExtra("Publisher", selectedBook.getPublisher());
-        detailsIntent.putExtra("PublishDate", selectedBook.getPublishDate());
-        detailsIntent.putExtra("Edition", selectedBook.getEdition());
-        detailsIntent.putExtra("Cost", selectedBook.getCost());
-        detailsIntent.putExtra("RetailPrice", selectedBook.getRetailPrice());
-        detailsIntent.putExtra("Rating", selectedBook.getRating());
-        detailsIntent.putExtra("CoverType", selectedBook.getCoverType());
-        detailsIntent.putExtra("Genre", selectedBook.getGenre());
-
-        startActivity(detailsIntent);
-    }
 }

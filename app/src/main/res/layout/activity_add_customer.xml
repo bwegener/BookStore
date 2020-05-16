@@ -3,7 +3,18 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_add_customer"
+    tools:context=".AddCustomerActivity"
     android:orientation="vertical">
+
+    <ImageButton
+        android:id="@+id/backArrowImage"
+        android:layout_width="140dp"
+        android:layout_height="120dp"
+        android:src="@drawable/back_arrow"
+        android:onClick="goBack"
+        />
 
     <LinearLayout
         android:layout_marginTop="20dp"
@@ -12,17 +23,17 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/titleTextView"
+            android:id="@+id/firstNameTextView"
             android:layout_marginLeft="50dp"
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/title"
+            android:text="@string/first_name"
             android:textSize="@dimen/add_book_text"
             />
 
         <EditText
-            android:id="@+id/titleEditText"
+            android:id="@+id/firstNameET"
             android:layout_marginLeft="20dp"
             android:layout_weight="1"
             android:layout_width="250dp"
@@ -38,43 +49,17 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/authorLastTextView"
+            android:id="@+id/lastNameTextView"
             android:layout_marginLeft="50dp"
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/author_last"
+            android:text="@string/last_name"
             android:textSize="@dimen/add_book_text"
             />
 
         <EditText
-            android:id="@+id/authorLastEditText"
-            android:layout_marginLeft="20dp"
-            android:layout_weight="1"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/add_book_text"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/authorFirstTextView"
-            android:layout_marginLeft="50dp"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/author_first"
-            android:textSize="@dimen/add_book_text"
-            />
-
-        <EditText
-            android:id="@+id/authorFirstEditText"
+            android:id="@+id/lastNameET"
             android:layout_marginLeft="20dp"
             android:layout_weight="1"
             android:layout_width="250dp"
@@ -91,17 +76,44 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/publisherTextView"
+            android:id="@+id/addressTextView"
             android:layout_marginLeft="50dp"
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/publisher"
+            android:text="@string/address"
             android:textSize="@dimen/add_book_text"
             />
 
         <EditText
-            android:id="@+id/publisherEditText"
+            android:id="@+id/addressET"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/add_book_text"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/zipTextView"
+            android:layout_marginLeft="50dp"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/zip"
+            android:textSize="@dimen/add_book_text"
+            />
+
+        <EditText
+            android:id="@+id/zipET"
             android:layout_marginLeft="20dp"
             android:layout_weight="1"
             android:layout_width="250dp"
@@ -119,17 +131,17 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/publishDateTextView"
+            android:id="@+id/phoneNumberTextView"
             android:layout_marginLeft="50dp"
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/publish_date"
+            android:text="@string/phone_number"
             android:textSize="@dimen/add_book_text"
             />
 
         <EditText
-            android:id="@+id/publishDateEditText"
+            android:id="@+id/phoneNumberET"
             android:layout_marginLeft="20dp"
             android:layout_weight="1"
             android:layout_width="250dp"
@@ -147,17 +159,17 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/editionTextView"
+            android:id="@+id/booksTextView"
             android:layout_marginLeft="50dp"
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/edition"
+            android:text="@string/books"
             android:textSize="@dimen/add_book_text"
             />
 
         <EditText
-            android:id="@+id/editionEditText"
+            android:id="@+id/booksET"
             android:layout_marginLeft="20dp"
             android:layout_weight="1"
             android:layout_width="250dp"
@@ -174,137 +186,33 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/costTextView"
+            android:id="@+id/ordersTextView"
             android:layout_marginLeft="50dp"
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/cost"
+            android:text="@string/orders"
             android:textSize="@dimen/add_book_text"
             />
 
         <EditText
-            android:id="@+id/costEditText"
+            android:id="@+id/ordersET"
             android:layout_marginLeft="20dp"
             android:layout_weight="1"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/add_book_text"/>
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/retailPriceTextView"
-            android:layout_marginLeft="50dp"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/retail_price"
-            android:textSize="@dimen/add_book_text"
-            />
-
-        <EditText
-            android:id="@+id/retailPriceEditText"
-            android:layout_marginLeft="20dp"
-            android:layout_weight="1"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/add_book_text"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/ratingTextView"
-            android:layout_marginLeft="50dp"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/rating"
-            android:textSize="@dimen/add_book_text"
-            />
-
-        <RatingBar
-            android:id="@+id/ratingBar"
-            android:numStars="5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/add_book_text"
-            ></RatingBar>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/coverTypeTextView"
-            android:layout_marginLeft="50dp"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/cover_type"
-            android:textSize="@dimen/add_book_text"
-            />
-
-        <EditText
-            android:id="@+id/coverTypeEditText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_weight="1"
-            android:textSize="@dimen/add_book_text"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/genreTextView"
-            android:layout_marginLeft="50dp"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/genre"
-            android:textSize="@dimen/add_book_text"
-            />
-
-        <Spinner
-            android:id="@+id/genreSpinner"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_marginLeft="20dp"
-            android:layout_weight="1"
             android:textSize="@dimen/add_book_text"/>
 
     </LinearLayout>
 
     <Button
-        android:id="@+id/addBookButton"
+        android:id="@+id/addEmployeeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:onClick="addBook"
-        android:text="@string/add_book"
+        android:onClick="addCustomer"
+        android:background="@color/colorBlue"
+        android:text="@string/button_add_customer"
         />
 
 

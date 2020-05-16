@@ -3,10 +3,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_customer_details"
+    tools:context=".CustomerDetailsActivity"
     android:orientation="vertical">
 
     <ImageView
-        android:id="@+id/bookImageView"
+        android:id="@+id/customerImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -18,7 +21,7 @@
         />
 
     <TextView
-        android:id="@+id/bookTitleTextView"
+        android:id="@+id/customerFirstNameTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
@@ -28,7 +31,7 @@
         />
 
     <TextView
-        android:id="@+id/bookAuthorLastTextView"
+        android:id="@+id/customerLastNameTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
@@ -38,7 +41,7 @@
         />
 
     <TextView
-        android:id="@+id/bookAuthorFirstTextView"
+        android:id="@+id/customerAddressTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
@@ -48,7 +51,7 @@
         />
 
     <TextView
-        android:id="@+id/bookPublisherTextView"
+        android:id="@+id/customerZipTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
@@ -58,7 +61,7 @@
         />
 
     <TextView
-        android:id="@+id/bookPublishDateTextView"
+        android:id="@+id/customerPhoneTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
@@ -68,7 +71,7 @@
         />
 
     <TextView
-        android:id="@+id/bookEditionTextView"
+        android:id="@+id/customerBooksTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
@@ -78,47 +81,7 @@
         />
 
     <TextView
-        android:id="@+id/bookCostTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="40dp"
-        android:text="TextView"
-        android:textSize="20sp"
-        />
-
-    <TextView
-        android:id="@+id/bookRetailPriceTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="40dp"
-        android:text="TextView"
-        android:textSize="20sp"
-        />
-
-    <RatingBar
-        android:id="@+id/bookRating"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="40dp"
-        android:numStars="5"
-        android:textSize="20sp"
-        />
-
-    <TextView
-        android:id="@+id/bookCoverTypeTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="40dp"
-        android:text="TextView"
-        android:textSize="20sp"
-        />
-
-    <TextView
-        android:id="@+id/bookGenreTextView"
+        android:id="@+id/customerOrdersTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
@@ -134,26 +97,26 @@
         android:orientation="horizontal"
         >
 
-    <Button
-        android:id="@+id/backButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/button_back"
-        android:onClick="goBack"
-        />
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/button_back"
+            android:onClick="handleButtons"
+            />
 
         <Button
-            android:id="@+id/addToCartButtonButton"
+            android:id="@+id/addCustomerButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_weight="1"
-            android:text="@string/button_add_to_cart"
-            android:onClick="addToCart"
+            android:text="@string/button_add_customer"
+            android:onClick="handleButtons"
             />
 
     </LinearLayout>
-=
+    =
 
 </LinearLayout>

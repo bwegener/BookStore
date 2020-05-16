@@ -15,22 +15,16 @@ import android.widget.TextView;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private TextView antiqueBookstore;
     private EditText userNameLogin;
     private EditText passwordLogin;
-    private Button loginButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        antiqueBookstore = findViewById(R.id.antiqueBookstore);
         userNameLogin = findViewById(R.id.userNameLogInET);
         passwordLogin = findViewById(R.id.passwordLogInET);
-        loginButton = findViewById(R.id.loginButton);
-
-        RunAnimation();
     }
 
 
@@ -40,6 +34,7 @@ public class LoginActivity extends AppCompatActivity {
             return;
 
         Intent launchLogin = new Intent(LoginActivity.this, HomeScreenActivity.class);
+        // launchLogin.putExtra("username", userNameLogin.getText().toString());
         startActivity(launchLogin);
     }
 
@@ -54,18 +49,5 @@ public class LoginActivity extends AppCompatActivity {
             valid = false;
         }
         return valid;
-    }
-
-    private void RunAnimation() {
-        Animation a = AnimationUtils.loadAnimation(this, R.anim.anim);
-        a.reset();
-        antiqueBookstore.clearAnimation();
-        antiqueBookstore.startAnimation(a);
-        userNameLogin.clearAnimation();
-        userNameLogin.startAnimation(a);
-        passwordLogin.clearAnimation();
-        passwordLogin.startAnimation(a);
-        loginButton.clearAnimation();
-        loginButton.startAnimation(a);
     }
 }

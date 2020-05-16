@@ -88,7 +88,7 @@
             android:visibility="invisible"
             android:textSize="50sp"
             android:onClick="handleButtons"
-            android:text="@string/button_add_books"/>
+            android:text="@string/button_add_book"/>
 
     </LinearLayout>
 

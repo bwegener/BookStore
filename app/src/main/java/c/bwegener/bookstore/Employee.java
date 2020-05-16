@@ -5,75 +5,60 @@ import android.os.Parcelable;
 
 public class Employee implements Parcelable {
 
-    private long mID;
-    private String mUserName;
-    private String mPassword;
+    private long mId;
     private String mFirstName;
     private String mLastName;
-    private String mPhoneNumber;
     private String mAddress;
+    private String mPhoneNumber;
     private String mDateOfBirth;
     private String mHireDate;
+    private String mSales;
     private String mPosition;
 
     // Constructor
-    public Employee(long id, String userName, String password, String firstName, String lastName,
-                    String phoneNumber, String address, String dateOfBirth, String hireDate, String position)
+    public Employee(long id, String firstName, String lastName,
+                    String address, String phoneNumber, String dateOfBirth,
+                    String hireDate, String sales, String position)
     {
-        mID = id;
-        mUserName = userName;
-        mPassword = password;
+        mId = id;
         mFirstName = firstName;
         mLastName = lastName;
-        mPhoneNumber = phoneNumber;
         mAddress = address;
+        mPhoneNumber = phoneNumber;
         mDateOfBirth = dateOfBirth;
         mHireDate = hireDate;
+        mSales = sales;
         mPosition = position;
     }
 
-    public Employee(String userName, String password, String firstName, String lastName,
-                    String phoneNumber, String address, String dateOfBirth, String hireDate, String position)
+    public Employee(String firstName, String lastName,
+                    String address, String phoneNumber, String dateOfBirth, String hireDate,
+                    String sales, String position)
     {
-        this(-1, userName, password, firstName, lastName, phoneNumber, address, dateOfBirth, hireDate, position);
+        this(-1, firstName, lastName, address, phoneNumber, dateOfBirth, hireDate, sales, position);
     }
 
     protected Employee(Parcel in)
     {
-        mID = in.readLong();
-        mUserName = in.readString();
-        mPassword = in.readString();
+        mId = in.readLong();
         mFirstName = in.readString();
         mLastName = in.readString();
-        mPhoneNumber = in.readString();
         mAddress = in.readString();
+        mPhoneNumber = in.readString();
         mDateOfBirth = in.readString();
         mHireDate = in.readString();
+        mSales = in.readString();
         mPosition = in.readString();
     }
 
-    public long getID() {
-        return mID;
+    public long getId() {
+        return mId;
     }
 
-    public void setID(long ID) {
-        mID = ID;
-    }
+    public void setId(long id) { mId = id; }
 
-    public String getUserName() {
-        return mUserName;
-    }
-
-    public void setUserName(String userName) {
-        mUserName = userName;
-    }
-
-    protected String getPassword() {
-        return mPassword;
-    }
-
-    public void setPassword(String password) {
-        mPassword = password;
+    public void setID(long id) {
+        mId = id;
     }
 
     public String getFirstName() {
@@ -92,20 +77,20 @@ public class Employee implements Parcelable {
         mLastName = lastName;
     }
 
-    public String getPhoneNumber() {
-        return mPhoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        mPhoneNumber = phoneNumber;
-    }
-
     public String getAddress() {
         return mAddress;
     }
 
     public void setAddress(String address) {
         mAddress = address;
+    }
+
+    public String getPhoneNumber() {
+        return mPhoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        mPhoneNumber = phoneNumber;
     }
 
     public String getDateOfBirth() {
@@ -124,6 +109,10 @@ public class Employee implements Parcelable {
         mHireDate = hireDate;
     }
 
+    public String getSales() { return mSales; }
+
+    public void setSales(String sales) { mSales = sales; }
+
     public String getPosition() {
         return mPosition;
     }
@@ -137,15 +126,14 @@ public class Employee implements Parcelable {
 
     public void writeToParcel(Parcel parcel, int i)
     {
-        parcel.writeLong(mID);
-        parcel.writeString(mUserName);
-        parcel.writeString(mPassword);
+        parcel.writeLong(mId);
         parcel.writeString(mFirstName);
         parcel.writeString(mLastName);
-        parcel.writeString(mPhoneNumber);
         parcel.writeString(mAddress);
+        parcel.writeString(mPhoneNumber);
         parcel.writeString(mDateOfBirth);
         parcel.writeString(mHireDate);
+        parcel.writeString(mSales);
         parcel.writeString(mPosition);
     }
 
@@ -157,4 +145,18 @@ public class Employee implements Parcelable {
         public Employee[] newArray(int size) { return new Employee[size]; }
     };
 
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "mID=" + mId +
+                ", mFirstName='" + mFirstName + '\'' +
+                ", mLastName='" + mLastName + '\'' +
+                ", mAddress='" + mAddress + '\'' +
+                ", mPhoneNumber='" + mPhoneNumber + '\'' +
+                ", mDateOfBirth='" + mDateOfBirth + '\'' +
+                ", mHireDate='" + mHireDate + '\'' +
+                ", mSales='" + mSales + '\'' +
+                ", mPosition='" + mPosition + '\'' +
+                '}';
+    }
 }

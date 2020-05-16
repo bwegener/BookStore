@@ -1,5 +1,4 @@
 package c.bwegener.bookstore;
 
-public class CheckoutActivity {
-
+public class OrdersListAdapter {
 }

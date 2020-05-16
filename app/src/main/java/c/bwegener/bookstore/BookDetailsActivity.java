@@ -1,19 +1,12 @@
 package c.bwegener.bookstore;
 
-import android.content.Intent;
-import android.content.res.AssetManager;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import android.text.TextUtils;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-import java.io.IOException;
-import java.io.InputStream;
 
 public class BookDetailsActivity extends AppCompatActivity
 {
@@ -22,12 +15,15 @@ public class BookDetailsActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_details);
 
+        /*
         Intent intent = getIntent();
         String title = intent.getStringExtra("Title");
-        String author = intent.getStringExtra("Author");
+        String authorLast = intent.getStringExtra("AuthorLast");
+        String authorFirst = intent.getStringExtra("AuthorFirst");
         String publisher = intent.getStringExtra("Publisher");
         String publishDate = intent.getStringExtra("PublishDate");
         String edition = intent.getStringExtra("Edition");
+
 
         // Potentially change cost and retail price to double
         String cost = intent.getStringExtra("Cost");
@@ -38,50 +34,69 @@ public class BookDetailsActivity extends AppCompatActivity
         //
         String coverType = intent.getStringExtra("CoverType");
         String genre = intent.getStringExtra("Genre");
+        */
 
 
         // Image and Text Views
-        ImageView bookImageView = (ImageView) findViewById(R.id.bookImageView);
-        TextView bookTitleTextView = (TextView) findViewById(R.id.bookTitleTextView);
-        TextView bookAuthorTextView = (TextView) findViewById(R.id.bookAuthorTextView);
-        TextView bookPublisherTextView = (TextView) findViewById(R.id.bookPublisherTextView);
-        TextView bookPublishDateTextView = (TextView) findViewById(R.id.bookPublishDateTextView);
-        TextView bookEditionTextView = (TextView) findViewById(R.id.bookEditionTextView);
+        // ImageView bookImageView = (ImageView) findViewById(R.id.bookImageView);
+        TextView bookTitleTextView = findViewById(R.id.bookTitleTextView);
+        TextView bookAuthorLastTextView = findViewById(R.id.bookAuthorLastTextView);
+        TextView bookAuthorFirstTextView = findViewById(R.id.bookAuthorFirstTextView);
+        TextView bookPublisherTextView = findViewById(R.id.bookPublisherTextView);
+        TextView bookPublishDateTextView = findViewById(R.id.bookPublishDateTextView);
+        TextView bookEditionTextView = findViewById(R.id.bookEditionTextView);
 
         // COST and RETAIL PRICE
-        TextView bookCostTextView = (TextView) findViewById(R.id.bookCostTextView);
-        TextView bookRetailPriceTextView = (TextView) findViewById(R.id.bookRetailPriceTextView);
+        TextView bookCostTextView = findViewById(R.id.bookCostTextView);
+        TextView bookRetailPriceTextView = findViewById(R.id.bookRetailPriceTextView);
 
         // RATING BAR
+        RatingBar bookRating = findViewById(R.id.bookRating);
 
         //
-        TextView bookCoverTypeTextView = (TextView) findViewById(R.id.bookCoverTypeTextView);
-        TextView bookGenreTextView = (TextView) findViewById(R.id.bookGenreTextView);
+        TextView bookCoverTypeTextView = findViewById(R.id.bookCoverTypeTextView);
+        TextView bookGenreTextView = findViewById(R.id.bookGenreTextView);
 
-        /*
-        // THIS IS IF WE WANT THE BOOKS TO HAVE SPECIFIC IMAGES --
-        AssetManager am = this.getAssets();
-        try {
-            InputStream stream = am.open(imageFileName);
-            Drawable image = Drawable.createFromStream(stream, title);
-            bookImageView.setImageDrawable(image);
-        }
-        catch (IOException e)
-        {
-            Log.e("Book Details", "Error loading image: " + imageFileName, e);
-        }
-        */
 
-        bookTitleTextView.setText(title);
-        bookAuthorTextView.setText(author);
-        bookPublisherTextView.setText(publisher);
-        bookPublishDateTextView.setText(publishDate);
-        bookEditionTextView.setText(edition);
-        bookCostTextView.setText("$" + cost);
-        bookRetailPriceTextView.setText("($" + retailPrice);
-        bookCoverTypeTextView.setText(coverType);
-        bookGenreTextView.setText(genre);
+        Book selectedBook = getIntent().getExtras().getParcelable("SelectedBook");
 
+        bookTitleTextView.setText(selectedBook.getTitle());
+        if(TextUtils.isEmpty(bookTitleTextView.getText()))
+            bookTitleTextView.setText("");
+
+        bookAuthorLastTextView.setText(selectedBook.getAuthorLast());
+        if(TextUtils.isEmpty(bookAuthorLastTextView.getText()))
+            bookAuthorLastTextView.setText("");
+
+        bookAuthorFirstTextView.setText(selectedBook.getAuthorFirst());
+        if(TextUtils.isEmpty(bookAuthorFirstTextView.getText()))
+            bookAuthorFirstTextView.setText("");
+
+        bookPublisherTextView.setText(selectedBook.getPublisher());
+        if(TextUtils.isEmpty(bookPublisherTextView.getText()))
+            bookPublisherTextView.setText("");
+
+        bookPublishDateTextView.setText(selectedBook.getPublishDate());
+        if(TextUtils.isEmpty(bookPublishDateTextView.getText()))
+            bookPublishDateTextView.setText("");
+
+        bookEditionTextView.setText(selectedBook.getEdition());
+        if(TextUtils.isEmpty(bookEditionTextView.getText()))
+            bookEditionTextView.setText("");
+
+        bookCostTextView.setText(selectedBook.getCost());
+        if(TextUtils.isEmpty(bookCostTextView.getText()))
+            bookCostTextView.setText("");
+
+        bookRetailPriceTextView.setText(selectedBook.getRetailPrice());
+        if(TextUtils.isEmpty(bookRetailPriceTextView.getText()))
+            bookRetailPriceTextView.setText("");
+
+        bookCoverTypeTextView.setText(selectedBook.getCoverType());
+        if(TextUtils.isEmpty(bookCoverTypeTextView.getText()))
+            bookCoverTypeTextView.setText("");
+
+        bookGenreTextView.setText(selectedBook.getGenre());
     }
 
     /*
@@ -98,6 +113,7 @@ public class BookDetailsActivity extends AppCompatActivity
      */
     protected void addToCart(View v)
     {
+
 
     }
 }

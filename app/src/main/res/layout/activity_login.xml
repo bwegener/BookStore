@@ -8,16 +8,12 @@
     android:orientation="vertical"
     tools:context=".LoginActivity">
 
-    <TextView
-        android:id="@+id/antiqueBookstore"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorBlue"
-        android:padding="25dp"
-        android:text="@string/app_name"
-        android:textAlignment="center"
-        android:textSize="25dp"
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:src="@drawable/dimmadangle_dimmadome_bookstore"
         />
+
 
     <EditText
         android:id="@+id/userNameLogInET"
@@ -43,8 +39,9 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:hint="@string/password"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:textColorHint="@color/colorFuschia"
+
         android:textSize="@dimen/edit_text_size"
         />
 

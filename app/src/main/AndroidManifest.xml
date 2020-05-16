@@ -25,7 +25,12 @@
             android:name=".HomeScreenActivity"
             android:parentActivityName=".LoginActivity"
             android:screenOrientation="landscape"
-            />
+            ></activity>
+
+        <activity android:name=".AddBookActivity"
+                  android:parentActivityName=".HomeScreenActivity"
+                  android:screenOrientation="landscape"
+            ></activity>
 
         <activity
             android:name=".BookSearchActivity"
@@ -36,13 +41,38 @@
         <activity android:name=".BookDetailsActivity"
                   android:parentActivityName=".BookSearchActivity"
                   android:screenOrientation="landscape"
-            ></activity>
+                  ></activity>
 
-        <activity android:name=".AddBookScreenActivity"
+        <activity android:name=".EmployeeListActivity"
                   android:parentActivityName=".HomeScreenActivity"
                   android:screenOrientation="landscape"
-                  android:exported="true"
                   ></activity>
+
+        <activity android:name=".EmployeeDetailsActivity"
+                  android:parentActivityName=".EmployeeListActivity"
+                  android:screenOrientation="landscape"
+                  ></activity>
+
+        <activity android:name=".AddEmployeeActivity"
+                  android:parentActivityName=".EmployeeListActivity"
+                  android:screenOrientation="landscape"
+                  ></activity>
+        
+        <activity android:name=".CustomerListActivity"
+                  android:parentActivityName=".HomeScreenActivity"
+                  android:screenOrientation="landscape"
+                  ></activity>
+
+        <activity android:name=".AddCustomerActivity"
+                  android:parentActivityName=".CustomerListActivity"
+                  android:screenOrientation="landscape"
+                  ></activity>
+
+        <activity android:name=".CustomerDetailsActivity"
+                  android:parentActivityName=".CustomerListActivity"
+                  android:screenOrientation="landscape"
+                  ></activity>
+
     </application>
 
 </manifest>
