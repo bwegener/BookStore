@@ -38,10 +38,17 @@
             android:screenOrientation="landscape"
             ></activity>
 
-        <activity android:name=".BookDetailsActivity"
-                  android:parentActivityName=".BookSearchActivity"
-                  android:screenOrientation="landscape"
-                  ></activity>
+        <activity 
+            android:name=".BookDetailsActivity"
+            android:parentActivityName=".BookSearchActivity"
+            android:screenOrientation="landscape"
+            ></activity>
+        
+        <activity
+            android:name=".CheckoutActivity"
+            android:parentActivityName=".BookSearchActivity"
+            android:screenOrientation="landscape"
+            ></activity>
 
         <activity android:name=".EmployeeListActivity"
                   android:parentActivityName=".HomeScreenActivity"
@@ -70,6 +77,21 @@
 
         <activity android:name=".CustomerDetailsActivity"
                   android:parentActivityName=".CustomerListActivity"
+                  android:screenOrientation="landscape"
+                  ></activity>
+        
+        <activity android:name=".OrdersListActivity"
+                  android:parentActivityName=".HomeScreenActivity"
+                  android:screenOrientation="landscape"
+                  ></activity>
+
+        <activity android:name=".OrdersDetailsActivity"
+                  android:parentActivityName=".OrdersListActivity"
+                  android:screenOrientation="landscape"
+                  ></activity>
+
+        <activity android:name=".AddOrdersActivity"
+                  android:parentActivityName=".OrdersDetailsActivity"
                   android:screenOrientation="landscape"
                   ></activity>
 

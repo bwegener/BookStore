@@ -2,27 +2,25 @@ package c.bwegener.bookstore;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
 public class EmployeeDetailsActivity extends AppCompatActivity {
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_employee_details);
 
-        TextView employeeFirstTV = (TextView) findViewById(R.id.employeeFirstNameTextView);
-        TextView employeeLastTV = (TextView) findViewById(R.id.employeeLastNameTextView);
-        TextView employeeAddressTV = (TextView) findViewById(R.id.employeeAddressTextView);
-        TextView employeePhoneTV = (TextView) findViewById(R.id.employeePhoneNumberTextView);
-        TextView employeeDateOfBirthTV = (TextView) findViewById(R.id.employeeDateOfBirthTextView);
-        TextView employeeHireDateTV = (TextView) findViewById(R.id.employeeHireDateTextView);
-        TextView employeeSalesTV = (TextView) findViewById(R.id.employeeSaleTextView);
-        TextView employeePositionTV = (TextView) findViewById(R.id.employeePositionTextView);
+        TextView employeeFirstTV = findViewById(R.id.employeeFirstNameTextView);
+        TextView employeeLastTV = findViewById(R.id.employeeLastNameTextView);
+        TextView employeeAddressTV = findViewById(R.id.employeeAddressTextView);
+        TextView employeePhoneTV = findViewById(R.id.employeePhoneNumberTextView);
+        TextView employeeDateOfBirthTV = findViewById(R.id.employeeDateOfBirthTextView);
+        TextView employeeHireDateTV = findViewById(R.id.employeeHireDateTextView);
+        TextView employeeSalesTV = findViewById(R.id.employeeSaleTextView);
+        TextView employeePositionTV = findViewById(R.id.employeePositionTextView);
 
         Employee selectedEmployee = getIntent().getExtras().getParcelable("SelectedEmployee");
 
@@ -36,16 +34,20 @@ public class EmployeeDetailsActivity extends AppCompatActivity {
         employeePositionTV.setText(selectedEmployee.getPosition());
     }
 
-    public void handleButtons(View v) {
+    public void handleButtonsEmployeeDetails(View v) {
         switch (v.getId()) {
-            case R.id.goBackArrow:
+            case R.id.backButton:
                 Intent employeeListActivity = new Intent(this, EmployeeListActivity.class);
                 startActivity(employeeListActivity);
                 break;
-            case R.id.addEmployeeButton:
+            case R.id.modifyEmployeeButton:
+            {
+                // This needs to be fixed to reset all the TextViews to EditText
                 Intent addEmployeeActivity = new Intent(this, AddEmployeeActivity.class);
                 startActivity(addEmployeeActivity);
                 break;
+            }
+
         }
     }
 }

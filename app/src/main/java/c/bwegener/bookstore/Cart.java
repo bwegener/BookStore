@@ -1,17 +1,17 @@
 package c.bwegener.bookstore;
 
 public class Cart {
-    private int mId;
+    private long mId;
     private Book mBook;
 
-    public Cart(int id, Book book) {
+    public Cart(long id, Book book) {
         mId = id;
         mBook = book;
     }
 
-    public int getId() { return mId; }
+    public long getId() { return mId; }
 
-    public void setId(int id) { mId = id; }
+    public void setId(long id) { mId = id; }
 
     public Book getBook() {return mBook; }
 

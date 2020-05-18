@@ -28,6 +28,7 @@
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
             android:text="@string/first_name"
             android:textSize="@dimen/add_book_text"
             />
@@ -54,6 +55,7 @@
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
             android:text="@string/last_name"
             android:textSize="@dimen/add_book_text"
             />
@@ -81,6 +83,7 @@
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
             android:text="@string/address"
             android:textSize="@dimen/add_book_text"
             />
@@ -109,6 +112,7 @@
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
             android:text="@string/phone_number"
             android:textSize="@dimen/add_book_text"
             />
@@ -137,6 +141,7 @@
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
             android:text="@string/date_of_birth"
             android:textSize="@dimen/add_book_text"
             />
@@ -164,6 +169,7 @@
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
             android:text="@string/hire_date"
             android:textSize="@dimen/add_book_text"
             />
@@ -190,6 +196,7 @@
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
             android:text="@string/position"
             android:textSize="@dimen/add_book_text"
             />
@@ -206,12 +213,13 @@
 
     <Button
         android:id="@+id/addEmployeeButton"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:onClick="addEmployee"
+        android:textColor="@color/colorWhite"
         android:background="@color/colorBlue"
-        android:text="@string/button_add_employee"
+        android:text="@string/add_employee"
         />
 
 

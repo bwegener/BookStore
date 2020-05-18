@@ -15,6 +15,9 @@ public class Employee implements Parcelable {
     private String mSales;
     private String mPosition;
 
+    // Default Constructor
+    public Employee() { this(-1,"","","","","","","",""); }
+
     // Constructor
     public Employee(long id, String firstName, String lastName,
                     String address, String phoneNumber, String dateOfBirth,
@@ -38,7 +41,7 @@ public class Employee implements Parcelable {
         this(-1, firstName, lastName, address, phoneNumber, dateOfBirth, hireDate, sales, position);
     }
 
-    protected Employee(Parcel in)
+    private Employee(Parcel in)
     {
         mId = in.readLong();
         mFirstName = in.readString();
@@ -119,6 +122,11 @@ public class Employee implements Parcelable {
 
     public void setPosition(String position) {
         mPosition = position;
+    }
+
+    public String getFullName(String firstName, String lastName)
+    {
+        return firstName + " " + lastName;
     }
 
     @Override

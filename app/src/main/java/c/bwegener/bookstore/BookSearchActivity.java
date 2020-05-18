@@ -8,6 +8,7 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -50,8 +51,16 @@ public class BookSearchActivity extends AppCompatActivity {
         searchWindowET = (EditText) findViewById(R.id.searchWindowET);
         searchWindowET.addTextChangedListener(searchWindowTextWatcher);
 
+        Spinner mySpinner = findViewById(R.id.genreSpinner);
+
+        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(BookSearchActivity.this,
+                android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.genre));
+        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         genreSpinner = (Spinner) findViewById(R.id.genreSpinner);
         genreSpinner.setOnItemSelectedListener(genreSpinnerListener);
+
+        mySpinner.setAdapter(myAdapter);
+
 
 
         /*
@@ -99,7 +108,7 @@ public class BookSearchActivity extends AppCompatActivity {
             // Clear the adapter
             bookListAdapter.clear();
 
-            if(genre.equals("[Select Genre"))
+            if(genre.equals("[Select Genre]"))
                 bookListAdapter.addAll(allBooksList);
             else
             {
@@ -123,7 +132,7 @@ public class BookSearchActivity extends AppCompatActivity {
         {
             LinearLayout selectedLayout = (LinearLayout) v;
             Book selectedBook = (Book) selectedLayout.getTag();
-            Log.i("AntiqueBookstore", selectedBook.toString());
+            Log.i("Antique Bookstore", selectedBook.toString());
             Intent detailsActivity = new Intent(this, BookDetailsActivity.class);
 
             detailsActivity.putExtra("SelectedBook", selectedBook);
@@ -136,7 +145,7 @@ public class BookSearchActivity extends AppCompatActivity {
     {
         switch(v.getId())
         {
-            case R.id.logoutButton:
+            case R.id.goBackArrow:
                 Intent logoutIntent = new Intent(this, HomeScreenActivity.class);
                 startActivity(logoutIntent);
                 break;

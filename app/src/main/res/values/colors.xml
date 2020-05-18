@@ -3,5 +3,10 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorFuschia">#D81B60</color>
-    <color name="colorBlue">#00FFFF</color>
+    <color name="colorBlue">#6DCFF6</color>
+    <color name="colorGreen">#1ca07e</color>
+    <color name="colorRed">#ed145b</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorSilver">#a6a6a6</color>
+    <color name="colorBlack">#000000</color>
 </resources>

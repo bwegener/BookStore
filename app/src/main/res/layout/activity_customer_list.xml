@@ -26,19 +26,30 @@
             android:layout_marginTop="25dp"
             android:layout_marginLeft="225dp"
             android:layout_gravity="center"
+            android:textColor="@color/colorBlack"
             android:textSize="50sp"
-            android:text="@string/button_customers"
+            android:text="@string/customers"
             android:layout_marginBottom="20dp"
             />
 
     </LinearLayout>
 
+    <EditText
+        android:id="@+id/searchCustomersET"
+        android:layout_width="900dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="50dp"
+        android:ems="10"
+        android:hint="@string/search_customer"
+        android:inputType="textPersonName"
+        android:textAlignment="center"/>
+
     <ListView
         android:id="@+id/customerListView"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:layout_marginTop="25dp"
+        android:layout_height="342dp"
         android:layout_gravity="center"
+        android:layout_marginTop="25dp"
         >
 
     </ListView>
@@ -51,7 +62,7 @@
         android:layout_gravity="center"
         android:background="@color/colorBlue"
         android:onClick="handleButtons"
-        android:text="@string/button_add_customer"
+        android:text="@string/add_customer"
         />
 
 </LinearLayout>

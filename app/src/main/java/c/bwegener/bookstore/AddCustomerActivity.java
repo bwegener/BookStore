@@ -17,8 +17,6 @@ public class AddCustomerActivity extends AppCompatActivity
     private EditText addressET;
     private EditText zipET;
     private EditText phoneET;
-    private EditText booksET;
-    private EditText ordersET;
 
 
     @Override
@@ -34,8 +32,6 @@ public class AddCustomerActivity extends AppCompatActivity
         addressET = findViewById(R.id.addressET);
         zipET = findViewById(R.id.zipET);
         phoneET = findViewById(R.id.phoneNumberET);
-        booksET = findViewById(R.id.booksET);
-        ordersET = findViewById(R.id.ordersET);
 
         ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(AddCustomerActivity.this,
                 android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.position));
@@ -57,12 +53,8 @@ public class AddCustomerActivity extends AppCompatActivity
         String phone = phoneET.getText().toString();
         if(TextUtils.isEmpty(phoneET.getText()))
             phoneET.setText("");
-        String books = booksET.getText().toString();
-        if(TextUtils.isEmpty(booksET.getText()))
-            booksET.setText("");
-        String orders = ordersET.getText().toString();
-        if(TextUtils.isEmpty(ordersET.getText()))
-            ordersET.setText("");
+        String books = "";
+        String orders = "";
 
         Customer newCustomer = new Customer(firstName, lastName, address,
                 zip, phone, books, orders);
@@ -74,8 +66,6 @@ public class AddCustomerActivity extends AppCompatActivity
         addressET.setText("");
         zipET.setText("");
         phoneET.setText("");
-        booksET.setText("");
-        ordersET.setText("");
 
         db.close();
 

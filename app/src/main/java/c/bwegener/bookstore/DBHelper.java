@@ -40,7 +40,6 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String FIELD_BOOKS_GENRE = "book_genre";
 
 
-    // TODO: REOPEN EVERY DATABASE ONCE THEY ARE ACTIVATED AND USED
     /*
     // Database 2 -- Authors Database + Fields
     private static final String AUTHORS_TABLE = "Authors";
@@ -83,29 +82,37 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String FIELD_BOOKS_ID = "books_id";
 
 
-    /*
-    DEAL WITH THIS DATABASE LAST
-
-    // Database 5 -- Sales Database + Fields
-    private static final String SALES_TABLE = "Sales";
-    private static final String SALES_KEY_FIELD_ID = "_id";
-    private static final String FIELD_SALES_BOOK_IS_SOLD = "book_sold";           // Relational Database
-    //  Relational Database -- Customer who bought the book
-    private static final String FIELD_SALES_CUSTOMER = "sales_customer";          // Relational Database
-    // Salesperson who sold the book
-    private static final String FIELD_SALES_EMPLOYEE = "sales_employee";          // Relational Database
-    // Double or String -- Total cost of sales
-    private static final String FIELD_SALES_TOTAL = "sales_total";                // Relational Database
+    // Database 6 -- Orders Database + Fields
+    private static final String ORDERS_TABLE = "Orders";
+    private static final String ORDERS_KEY_FIELD_ID = "_id";
+    // private static final String FIELD_ORDERS_BOOK_IS_SOLD = "book_sold"; // Relational Database
+    // Customer who bought the book
+    private static final String FIELD_ORDERS_CUSTOMER = "orders_customer";          //  Relational Database
+    // Employee who sold the book
+    private static final String FIELD_ORDERS_EMPLOYEE = "orders_employee";    // Relational Database
+    // String -- Total cost of sales
+    private static final String FIELD_ORDERS_TOTAL = "order_total";          // Relational Database
     // String -- Date of sale
-    private static final String FIELD_SALES_DATE = "sales_date";                  // Relational Database
-    // Bool to check if the book is picked up
-    private static final String FIELD_SALES_PICKED_UP = "sales_picked_up";
+    private static final String FIELD_ORDERS_DATE = "orders_date";             // Relational Database
+    // String -- Payment Type
+    private static final String FIELD_ORDERS_PAYMENT = "payment_type";
+    // Bool to check if book is paid for, cannot be shipped unless paid for
+    private static final String FIELD_ORDERS_PAID = "orders_paid";
+    // Bool to check if order is complete
+    private static final String FIELD_ORDERS_COMPLETE = "orders_complete";
+    /*
     // Bool to check if book is shipped
     private static final String FIELD_SALES_SHIPPED = "sales_shipped";
-    // Bool to check if book is paid for, cannot be shipped unless paid for
-    private static final String FIELD_SALES_PAID = "sales_paid";
     // String -- Drop Down -- Payment type -- CASH/CHECK/CREDIT
     private static final String FIELD_SALES_PAYMENT = "sales_payment";
+    */
+
+    /*
+    // Database 7 -- User Database
+    private static final String USER_TABLE = "User";
+    private static final String USER_KEY_FIELD_ID = "_id";
+    private static final String FIELD_USER_NAME = "user_name";
+    private static final String FIELD_USER_PASSWORD = "user_password";
     */
 
 
@@ -171,9 +178,31 @@ public class DBHelper extends SQLiteOpenHelper {
         // Create Cart table
         createQuery = "CREATE TABLE " + CART_TABLE + "("
                 + FIELD_ID + " INTEGER, "
+                + FIELD_BOOKS_ID + " INTEGER, "
                 + "FOREIGN KEY(" + FIELD_BOOKS_ID + ") REFERENCES "
                 + BOOKS_TABLE + "(" + BOOKS_KEY_FIELD_ID + "))";
         database.execSQL(createQuery);
+
+        // Create Orders table
+        createQuery = "CREATE TABLE " + ORDERS_TABLE + "("
+                + ORDERS_KEY_FIELD_ID + " INTEGER PRIMARY KEY, "
+                + FIELD_ORDERS_CUSTOMER + " TEXT, "
+                + FIELD_ORDERS_EMPLOYEE + " TEXT, "
+                + FIELD_ORDERS_TOTAL + " TEXT, "
+                + FIELD_ORDERS_DATE + " TEXT, "
+                + FIELD_ORDERS_PAYMENT + " TEXT, "
+                + FIELD_ORDERS_PAID + " BIT, "
+                + FIELD_ORDERS_COMPLETE + " BIT" + ")";
+        database.execSQL(createQuery);
+
+        /*
+        // Create User table
+        createQuery = "CREATE TABLE " + USER_TABLE + "("
+                + USER_KEY_FIELD_ID + " INTEGER PRIMARY KEY, "
+                + FIELD_USER_NAME + " TEXT, "
+                + FIELD_USER_PASSWORD + " TEXT" + ")";
+        database.execSQL(createQuery);
+        */
     }
 
 
@@ -189,6 +218,10 @@ public class DBHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + EMPLOYEES_TABLE);
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + CUSTOMERS_TABLE);
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + CART_TABLE);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + ORDERS_TABLE);
+        /*
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + USER_TABLE);
+        */
 
         onCreate(sqLiteDatabase);
     }
@@ -286,6 +319,41 @@ public class DBHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    public void addOrders(Orders order)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put(FIELD_ORDERS_CUSTOMER, order.getCustomer());
+        values.put(FIELD_ORDERS_EMPLOYEE, order.getEmployee());
+        values.put(FIELD_ORDERS_TOTAL, order.getTotal());
+        values.put(FIELD_ORDERS_DATE, order.getDate());
+        values.put(FIELD_ORDERS_PAYMENT, order.getPaymentType());
+        values.put(FIELD_ORDERS_PAID, order.isPaid());
+        values.put(FIELD_ORDERS_COMPLETE, order.isComplete());
+
+        long id = db.insert(ORDERS_TABLE, null, values);
+        order.setId(id);
+
+        db.close();
+    }
+
+    // TODO: FINISH ORDERS (UPDATE, GET, DELETE)
+    // TODO: START/FINISH USER DB (ADD, UPDATE, GET, DELETE)
+    /*
+    public void addUser(User user) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put(FIELD_USER_NAME, user.getUserName());
+        values.put(FIELD_USER_PASSWORD, user.getPassword());
+
+        long id = db.insert(USER_TABLE, null, values);
+        user.setId(id);
+        db.close();
+    }
+    */
+
 
     //**************** UPDATE TABLES **************************
 
@@ -348,7 +416,6 @@ public class DBHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-
     public void updateCustomer(Customer customer)
     {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -378,6 +445,41 @@ public class DBHelper extends SQLiteOpenHelper {
 
         db.close();
     }
+
+
+    public void updateOrders(Orders orders)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values= new ContentValues();
+
+        values.put(FIELD_ORDERS_CUSTOMER, orders.getCustomer());
+        values.put(FIELD_ORDERS_EMPLOYEE, orders.getEmployee());
+        values.put(FIELD_ORDERS_TOTAL, orders.getTotal());
+        values.put(FIELD_ORDERS_DATE, orders.getDate());
+        values.put(FIELD_ORDERS_PAYMENT, orders.getPaymentType());
+        values.put(FIELD_ORDERS_PAID, orders.isPaid());
+        values.put(FIELD_ORDERS_COMPLETE, orders.isComplete());
+
+        db.update(ORDERS_TABLE, values, ORDERS_KEY_FIELD_ID + " = ?",
+                new String[]{String.valueOf(orders.getId())});
+        db.close();
+    }
+
+    /*
+    public void updateUser(User user)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values= new ContentValues();
+
+        values.put(FIELD_USER_NAME, user.getUserName());
+        values.put(FIELD_USER_PASSWORD, user.getPassword());
+
+        db.update(USER_TABLE, values, USER_KEY_FIELD_ID + " = ?",
+                new String[]{String.valueOf(user.getId())});
+        db.close();
+
+    }
+    */
 
     // ******************* GET TABLES ***********************
 
@@ -519,6 +621,64 @@ public class DBHelper extends SQLiteOpenHelper {
         return customer;
     }
 
+    public Orders getOrder(long id)
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.query(
+                ORDERS_TABLE,
+                new String[]{ORDERS_KEY_FIELD_ID,
+                        FIELD_ORDERS_CUSTOMER,
+                        FIELD_ORDERS_EMPLOYEE,
+                        FIELD_ORDERS_TOTAL,
+                        FIELD_ORDERS_DATE,
+                        FIELD_ORDERS_PAYMENT,
+                        FIELD_ORDERS_PAID,
+                        FIELD_ORDERS_COMPLETE},
+                ORDERS_KEY_FIELD_ID + "=?",
+                new String[]{String.valueOf(id)},
+                null, null, null, null);
+
+        if(cursor != null) cursor.moveToFirst();
+
+        Orders order = new Orders(cursor.getLong(0),
+                cursor.getString(1),
+                cursor.getString(2),
+                cursor.getString(3),
+                cursor.getString(4),
+                cursor.getString(5),
+                Boolean.parseBoolean(cursor.getString(5)),
+                Boolean.parseBoolean(cursor.getString(6)));
+
+        cursor.close();
+        db.close();
+        return order;
+    }
+
+    /*
+    public User getUser(long id)
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.query(
+                USER_TABLE,
+                new String[]{USER_KEY_FIELD_ID,
+                        FIELD_USER_NAME,
+                        FIELD_USER_PASSWORD},
+                USER_KEY_FIELD_ID + "=?",
+                new String[]{String.valueOf(id)},
+                null, null, null, null);
+
+        if(cursor != null) cursor.moveToFirst();
+
+        User user = new User(cursor.getLong(0),
+                cursor.getString(1),
+                cursor.getString(2));
+
+        cursor.close();
+        db.close();
+        return user;
+    }
+    */
+
     // ******************* DELETE TABLES ***********************
 
 
@@ -531,6 +691,26 @@ public class DBHelper extends SQLiteOpenHelper {
                 new String[]{String.valueOf(cart.getId())});
         db.close();
     }
+
+    public void deleteOrder(Orders order) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        db.delete(ORDERS_TABLE, ORDERS_KEY_FIELD_ID + " = ?",
+                new String[]{String.valueOf(order.getId())});
+        db.close();
+    }
+
+
+    /*
+    public void deleteUser(User user)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        db.delete(USER_TABLE, FIELD_ID + " = ?",
+                new String[]{String.valueOf(user.getId())});
+        db.close();
+    }
+    */
 
 
 
@@ -577,6 +757,21 @@ public class DBHelper extends SQLiteOpenHelper {
         db.delete(CART_TABLE, null, null);
         db.close();
     }
+
+    public void deleteAllOrders() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(ORDERS_TABLE, null, null);
+        db.close();
+    }
+
+    /*
+    public void deleteAllUsers()
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(USER_TABLE, null, null);
+        db.close();
+    }
+    */
 
     // ******************* GET ALL TABLES ***********************
 
@@ -667,7 +862,6 @@ public class DBHelper extends SQLiteOpenHelper {
         return employeeList;
     }
 
-
     public ArrayList<Customer> getAllCustomers() {
         ArrayList<Customer> customerList = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
@@ -720,6 +914,55 @@ public class DBHelper extends SQLiteOpenHelper {
         db.close();
         return cartList;
     }
+
+    public ArrayList<Orders> getAllOrders() {
+        ArrayList<Orders> ordersList = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.query(
+                ORDERS_TABLE,
+                new String[]{ORDERS_KEY_FIELD_ID, FIELD_ORDERS_CUSTOMER, FIELD_ORDERS_EMPLOYEE,
+                        FIELD_ORDERS_TOTAL, FIELD_ORDERS_DATE, FIELD_ORDERS_PAYMENT,
+                        FIELD_ORDERS_PAID, FIELD_ORDERS_COMPLETE},
+                null, null, null, null, null, null);
+
+        // Collect each row in the table
+        if(cursor.moveToFirst()) {
+            do {
+                Orders orders = new Orders(cursor.getLong(0),
+                        cursor.getString(1),
+                        cursor.getString(2),
+                        cursor.getString(3),
+                        cursor.getString(4),
+                        cursor.getString(5),
+                        Boolean.parseBoolean(cursor.getString(5)),
+                        Boolean.parseBoolean(cursor.getString(6)));
+                ordersList.add(orders);
+            } while (cursor.moveToNext());
+        }
+        return ordersList;
+    }
+
+    /*
+    public ArrayList<User> getAllUsers() {
+        ArrayList<User> userList = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.query(
+                USER_TABLE,
+                new String[]{USER_KEY_FIELD_ID, FIELD_USER_NAME, FIELD_USER_PASSWORD},
+                null, null, null, null, null, null);
+
+        // Collect each row in the table
+        if(cursor.moveToFirst()) {
+            do {
+                User user = new User(cursor.getLong(0),
+                        cursor.getString(1),
+                        cursor.getString(2));
+                userList.add(user);
+            } while (cursor.moveToNext());
+        }
+        return userList;
+    }
+    */
 
 
     // ******************* IMPORT FROM CSV ***********************
@@ -850,6 +1093,80 @@ public class DBHelper extends SQLiteOpenHelper {
         }
         return true;
     }
+
+    public boolean importOrdersFromCSV(String csvFileName) {
+        AssetManager am = mContext.getAssets();
+        InputStream inStream;
+        try {
+            inStream = am.open(csvFileName);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+
+        BufferedReader buffer = new BufferedReader(new InputStreamReader(inStream));
+        String line;
+        try {
+            while ((line = buffer.readLine()) != null) {
+                String[] fields = line.split(",");
+                if (fields.length != 8) {
+                    Log.d("Orders Finder", "Skipping Bad CSV Row: " + Arrays.toString(fields));
+                    continue;
+                }
+                int id = Integer.parseInt(fields[0].trim());
+                String ordersCustomer = fields[1].trim();
+                String ordersEmployee = fields[2].trim();
+                String ordersTotal = fields[3].trim();
+                String ordersDate = fields[4].trim();
+                String ordersPayment = fields[5].trim();
+                String ordersPaid = fields[5].trim();
+                String ordersComplete = fields[6].trim();
+                addOrders(new Orders(id, ordersCustomer, ordersEmployee,
+                        ordersTotal, ordersDate, ordersPayment,
+                        Boolean.parseBoolean(ordersPaid),
+                        Boolean.parseBoolean(ordersComplete)));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+
+    /*
+    public boolean importUserFromCSV(String csvFileName) {
+        AssetManager am = mContext.getAssets();
+        InputStream inStream;
+        try {
+            inStream = am.open(csvFileName);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+
+        BufferedReader buffer = new BufferedReader(new InputStreamReader(inStream));
+        String line;
+        try {
+            while ((line = buffer.readLine()) != null) {
+                String[] fields = line.split(",");
+                if (fields.length != 3) {
+                    Log.d("User Finder", "Skipping Bad CSV Row: " + Arrays.toString(fields));
+                    continue;
+                }
+                int id = Integer.parseInt(fields[0].trim());
+                String userName = fields[1].trim();
+                String userPassword = fields[2].trim();
+                addUser(new User(id, userName, userPassword));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+    */
 
     // ******************* EXPORT TO CSV ***********************
 

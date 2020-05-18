@@ -37,7 +37,7 @@ public class CustomerDetailsActivity extends AppCompatActivity {
     {
         switch(v.getId())
         {
-            case R.id.goBackArrow:
+            case R.id.backButton:
                 Intent launchHomeScreen = new Intent(this, CustomerListActivity.class);
                 startActivity(launchHomeScreen);
                 break;

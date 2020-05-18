@@ -17,6 +17,7 @@
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
             android:text="@string/title"
             android:textSize="@dimen/add_book_text"
             />
@@ -43,6 +44,7 @@
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
             android:text="@string/author_last"
             android:textSize="@dimen/add_book_text"
             />
@@ -69,6 +71,7 @@
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
             android:text="@string/author_first"
             android:textSize="@dimen/add_book_text"
             />
@@ -96,6 +99,7 @@
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
             android:text="@string/publisher"
             android:textSize="@dimen/add_book_text"
             />
@@ -124,6 +128,7 @@
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
             android:text="@string/publish_date"
             android:textSize="@dimen/add_book_text"
             />
@@ -152,6 +157,7 @@
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
             android:text="@string/edition"
             android:textSize="@dimen/add_book_text"
             />
@@ -179,6 +185,7 @@
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
             android:text="@string/cost"
             android:textSize="@dimen/add_book_text"
             />
@@ -206,6 +213,7 @@
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
             android:text="@string/retail_price"
             android:textSize="@dimen/add_book_text"
             />
@@ -232,6 +240,7 @@
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
             android:text="@string/rating"
             android:textSize="@dimen/add_book_text"
             />
@@ -258,6 +267,7 @@
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
             android:text="@string/cover_type"
             android:textSize="@dimen/add_book_text"
             />
@@ -284,6 +294,7 @@
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
             android:text="@string/genre"
             android:textSize="@dimen/add_book_text"
             />
@@ -300,9 +311,11 @@
 
     <Button
         android:id="@+id/addBookButton"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:background="@color/colorSilver"
+        android:textColor="@color/colorWhite"
         android:onClick="addBook"
         android:text="@string/add_book"
         />

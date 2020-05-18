@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.Spinner;
@@ -14,18 +13,17 @@ import android.widget.Spinner;
 public class AddBookActivity extends AppCompatActivity {
 
     private DBHelper db;
-    // private BookListAdapter bookListAdapter;
 
     private EditText titleET;
     private EditText costET;
     private EditText retailPriceET;
-    private Spinner genreSpinner;
-    private Button addBook;
+
+    // private BookListAdapter bookListAdapter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_book_screen);
+        setContentView(R.layout.activity_add_book);
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         db = new DBHelper(this);
@@ -34,9 +32,7 @@ public class AddBookActivity extends AppCompatActivity {
         costET = findViewById(R.id.costEditText);
         retailPriceET = findViewById(R.id.retailPriceEditText);
 
-        /*
-        How to create drop down menu
-         */
+        // How to create a Drop Down menu
         Spinner mySpinner = findViewById(R.id.genreSpinner);
 
         ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(AddBookActivity.this,
@@ -45,16 +41,7 @@ public class AddBookActivity extends AppCompatActivity {
 
         // This allows the adapter to show the data inside the spinner
         mySpinner.setAdapter(myAdapter);
-
     }
-
-    /*
-    public void goBack(View v)
-    {
-        Intent goBack = new Intent(this, HomeScreenActivity.class);
-        startActivity(goBack);
-    }
-    */
 
     public void addBook(View v)
     {

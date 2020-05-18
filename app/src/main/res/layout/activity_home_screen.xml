@@ -19,8 +19,22 @@
             android:layout_marginTop="150dp"
             android:onClick="handleButtons"
             android:visibility="invisible"
+            android:background="@color/colorBlue"
+            android:textColor="@color/colorWhite"
             android:textSize="50sp"
-            android:text="@string/button_employees"/>
+            android:text="@string/employees"/>
+
+        <Button
+            android:id="@+id/logoutButton"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="250dp"
+            android:layout_gravity="center"
+            android:onClick="handleButtons"
+            android:background="@color/colorSilver"
+            android:textColor="@color/colorWhite"
+            android:text="@string/log_out"
+            android:textSize="25sp"/>
 
     </LinearLayout>
 
@@ -36,9 +50,11 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="25dp"
+            android:background="@color/colorBlue"
+            android:textColor="@color/colorWhite"
             android:textSize="50sp"
             android:onClick="handleButtons"
-            android:text="@string/button_book_search"/>
+            android:text="@string/book_search"/>
 
         <Button
             android:id="@+id/ordersButton"
@@ -46,30 +62,23 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="50dp"
+            android:background="@color/colorRed"
+            android:textColor="@color/colorWhite"
             android:textSize="50sp"
             android:onClick="handleButtons"
-            android:text="@string/button_orders"/>
+            android:text="@string/orders"/>
 
         <Button
             android:id="@+id/customersButton"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-
+            android:background="@color/colorGreen"
+            android:textColor="@color/colorWhite"
             android:layout_marginTop="50dp"
             android:textSize="50sp"
             android:onClick="handleButtons"
-            android:text="@string/button_customers"/>
-
-        <Button
-            android:id="@+id/logoutButton"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
-            android:layout_gravity="center"
-            android:onClick="handleButtons"
-            android:text="@string/button_log_out"
-            android:textSize="50sp"/>
+            android:text="@string/customers"/>
 
     </LinearLayout>
 
@@ -86,9 +95,11 @@
             android:layout_gravity="center"
             android:layout_marginTop="150dp"
             android:visibility="invisible"
+            android:background="@color/colorBlue"
+            android:textColor="@color/colorWhite"
             android:textSize="50sp"
             android:onClick="handleButtons"
-            android:text="@string/button_add_book"/>
+            android:text="@string/add_book"/>
 
     </LinearLayout>
 

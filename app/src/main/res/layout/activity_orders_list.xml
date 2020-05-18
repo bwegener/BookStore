@@ -4,32 +4,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".EmployeeListActivity"
-    android:id="@+id/activity_employee_list"
+    android:id="@+id/ordersLinearLayout"
+    tools:context=".OrdersListActivity"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <ImageButton
             android:id="@+id/goBackArrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/back_arrow"
-            android:onClick="handleButtonsEmployeeList"/>
-
+            android:onClick="handleButtonsOrdersList"
+            />
 
         <TextView
+            android:id="@+id/ordersTextView"
             android:layout_width="wrap_content"
-            android:layout_height="75dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginLeft="225dp"
-            android:layout_gravity="center"
-            android:textSize="50sp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="300dp"
+            android:layout_marginTop="20dp"
             android:textColor="@color/colorBlack"
-            android:text="@string/employees"
-            android:layout_marginBottom="20dp"
+            android:text="@string/orders"
+            android:textSize="60sp"
             />
 
     </LinearLayout>
@@ -39,13 +39,13 @@
         android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/searchEmployeesET"
+            android:id="@+id/searchOrders"
             android:layout_width="500dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
             android:layout_weight="1"
             android:ems="10"
-            android:hint="@string/search_employee"
+            android:hint="@string/search_orders"
             android:inputType="textPersonName"
             android:textAlignment="center"/>
 
@@ -53,43 +53,40 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="100dp"
-            android:textColor="@color/colorBlack"
             android:textSize="20sp"
-            android:text="@string/position"/>
+            android:textColor="@color/colorBlack"
+            android:text="@string/customers"/>
 
 
         <Spinner
-            android:id="@+id/positionSpinner"
+            android:id="@+id/customerSpinner"
             android:layout_width="517dp"
             android:layout_height="match_parent"
             android:layout_marginRight="50dp"
             android:layout_weight="1"
-            android:text="[Select Position]"
             android:layout_marginLeft="50dp">
         </Spinner>
 
     </LinearLayout>
 
     <ListView
-        android:id="@+id/employeeListView"
+        android:id="@+id/ordersList"
         android:layout_width="match_parent"
-        android:layout_height="446dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="25dp"
-        >
+        android:layout_height="387dp">
 
     </ListView>
 
     <Button
-        android:id="@+id/addEmployeeButton"
+        android:id="@+id/addOrderButton"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:layout_gravity="center"
         android:background="@color/colorBlue"
         android:textColor="@color/colorWhite"
-        android:onClick="handleButtonsEmployeeList"
-        android:text="@string/add_employee"
+        android:onClick="handleButtonsOrdersList"
+        android:text="@string/add_order"
         />
+
 
 </LinearLayout>

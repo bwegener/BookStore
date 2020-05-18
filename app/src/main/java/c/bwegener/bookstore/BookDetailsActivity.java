@@ -92,6 +92,8 @@ public class BookDetailsActivity extends AppCompatActivity
         if(TextUtils.isEmpty(bookRetailPriceTextView.getText()))
             bookRetailPriceTextView.setText("");
 
+        bookRating.setRating(selectedBook.getRating());
+
         bookCoverTypeTextView.setText(selectedBook.getCoverType());
         if(TextUtils.isEmpty(bookCoverTypeTextView.getText()))
             bookCoverTypeTextView.setText("");
@@ -99,19 +101,15 @@ public class BookDetailsActivity extends AppCompatActivity
         bookGenreTextView.setText(selectedBook.getGenre());
     }
 
-    /*
-    This quits the detailed view and goes back to the Book Search Activity
-     */
+    // This goes back to the Book Search Activity
     protected void goBack(View v)
     {
         finish();
     }
 
 
-    /*
-    This function will add the chosen book to the cart
-     */
-    protected void addToCart(View v)
+    // This function will add the chosen Book to the Cart
+    private void addToCart(View v)
     {
 
 

@@ -2,37 +2,45 @@
     <string name="app_name">Mr Finch"'"s Antique BookStore</string>
 
     <!-- Misc Buttons -->
-    <string name="button_log_out">Log Out</string>
-    <string name="button_back">Back</string>
+    <string name="log_out">Log Out</string>
+    <string name="back">Back</string>
 
     <!-- Login Screen -->
     <string name="user_name">Username</string>
     <string name="password">Password</string>
-    <string name="button_login">Login</string>
+    <string name="login">Login</string>
 
     <!-- Main Menu -->
-    <string name="button_book_search">Book Search</string>
-    <string name="button_orders">Orders</string>
-    <string name="button_customers">Customers</string>
-    <string name="button_employees">Employees</string>
-    <string name="button_add_book">Add Book</string>
+    <string name="book_search">Book Search</string>
+    <string name="orders">Orders</string>
+    <string name="customers">Customers</string>
+    <string name="employees">Employees</string>
 
-    <!-- Orders Screen-->
-    <string name="button_place_order">Place Order</string>
-    <string name="button_search_order">Search Order</string>
+    <!-- Modify/Add Text-->
+    <string name="add_employee">Add Employee</string>
+    <string name="modify_employee">Modify Employee</string>
+    <string name="add_customer">Add Customer</string>
+    <string name="modify_customer">Modify Customer</string>
+    <string name="place_order">Place Order</string>
+    <string name="add_order">Add Order</string>
+    <string name="add_book">Add Book</string>
 
-    <!-- Employees Screen-->
-    <string name="button_add_employee">Add Employee</string>
+    <!-- Search Text-->
+    <string name="search_customer">Search Customer</string>
+    <string name="search_employee">Search Employee</string>
+    <string name="search_orders">Search Order</string>
+    <string name="search_book">Search Book</string>
 
-    <!-- Customers Screen-->
-    <string name="button_modify_customer">Modify Customer</string>
-    <string name="button_add_customer">Add Customer</string>
-
-    <!-- Book Search Screen-->
-    <string name="search_window_hint">Search Window</string>
-    <string name="button_cart">Cart</string>
-    <string name="button_add_to_cart">Add to Cart</string>
-    <string name="button_checkout">Checkout</string>
+    <!-- Purchase Text -->
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="checkout">Checkout</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="tax">Tax</string>
+    <string name="total">Total</string>
+    <string name="cart">Cart</string>
+    <string name="paid">Paid</string>
+    <string name="complete">Complete</string>
+    <string name="payment_type">Payment Type</string>
 
     <!-- Add Book Screen -->
     <string name="author_last">Author Last</string>
@@ -54,23 +62,30 @@
         <item>Drama</item>
         <item>Cooking</item>
     </string-array>
-    <string name="add_book">Add Book</string>
 
-    <!-- Modify Employee / Customer -->
+    <!-- Employee / Customer -->
+    <string name="customer">Customer</string>
+    <string name="date">Date</string>
+    <string name="employee">Employee</string>
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
     <string name="address">Address</string>
     <string name="zip">Zip Code</string>
     <string name="books">Books</string>
-    <string name="orders">Orders</string>
     <string name="phone_number">Phone Number</string>
     <string name="date_of_birth">Date of Birth</string>
     <string name="hire_date">Hire Date</string>
+    <string name="sales">Sales</string>
     <string name="position">Position</string>
     <string-array name="position">
         <item>Part-Time</item>
         <item>Full-Time</item>
-        <item>Seasonal</item>
     </string-array>
+
+    <string-array name="customers">
+        <item>Steve Apple</item>
+        <item>Nancy Dovolio</item>
+    </string-array>
+
 
 </resources>

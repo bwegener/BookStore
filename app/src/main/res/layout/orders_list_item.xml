@@ -3,8 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:onClick="viewBookDetails"
-    android:id="@+id/bookListLinearLayout">
+    android:onClick="viewOrderDetails"
+    android:id="@+id/ordersListLinearLayout">
 
     <ImageView
         android:id="@+id/listItemImageView"
@@ -23,14 +23,14 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/bookListItemTitleTextView"
+            android:id="@+id/ordersListCustomerTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView"
             android:textSize="40sp"/>
 
         <TextView
-            android:id="@+id/bookListItemAuthorTextView"
+            android:id="@+id/ordersListTotalTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20sp"

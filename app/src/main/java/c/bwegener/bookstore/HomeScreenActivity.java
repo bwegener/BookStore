@@ -96,7 +96,7 @@ public class HomeScreenActivity extends AppCompatActivity {
                 startActivity(launchAddBookScreen);
                 break;
             case R.id.ordersButton:
-                Intent launchOrderScreen = new Intent(this, OrdersActivity.class);
+                Intent launchOrderScreen = new Intent(this, OrdersListActivity.class);
                 startActivity(launchOrderScreen);
                 break;
             case R.id.customersButton:
